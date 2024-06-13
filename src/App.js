@@ -1,13 +1,17 @@
 import logo from './logo.svg';
 import './App.css';
+import { useOnline } from './hooks/use-online';
+
 
 function App() {
+  const isOnline = useOnline();
+
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          { isOnline ? 'Online' : 'Offline' }
         </p>
         <a
           className="App-link"
